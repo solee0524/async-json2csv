@@ -20,7 +20,10 @@ module.exports = async function (options) {
   }
 
   var csv = '';
-  csv += fields.join(delimiter) + '\n';
+
+  if (!!options.header) {
+    csv += fields.join(delimiter) + '\n';
+  }
 
   for (let item of data) {
     var tmpRow = [];

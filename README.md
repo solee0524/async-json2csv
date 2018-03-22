@@ -48,13 +48,20 @@ var authors = [{
 
 var options = {
   data: authors,
-  fields: ['name', 'homepage', 'repo.url', 'keys']
+  fields: ['name', 'homepage', 'repo.url', 'keys'],
+  header: true
 }
 
 var csv = await json2csv(options);
 ```
 
 `data` and `fields` in `options` must be **Array**
+
+## Change
+
+### v1.0.1
+
+Add `header` option to decide whether to add fields to header or not.
 
 ## License
 MIT © Bo Li ([solee.me](http://solee.me))
