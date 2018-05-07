@@ -50,9 +50,7 @@ module.exports = async function (options) {
 
       if (typeof tmpValue === 'string' && tmpValue.includes(',')) {
         tmpValue = `"${tmpValue}"`;
-      }
-
-      if (Array.isArray(tmpValue)) {
+      } else if (Array.isArray(tmpValue)) {
         tmpValue = '"' + String(tmpValue).replace(/"/g, '""') + '"';
       } else {
         tmpValue = String(tmpValue).replace(/"/g, '""');
