@@ -48,12 +48,16 @@ module.exports = async function (options) {
         }
       }
 
+      if (typeof tmpValue === 'string' && tmpValue.includes('"')) {
+        tmpValue = String(tmpValue).replace(/"/g, '""');
+      }
+
       if (typeof tmpValue === 'string' && tmpValue.includes(',')) {
         tmpValue = `"${tmpValue}"`;
-      } else if (Array.isArray(tmpValue)) {
+      }
+
+      if (Array.isArray(tmpValue)) {
         tmpValue = '"' + String(tmpValue).replace(/"/g, '""') + '"';
-      } else {
-        tmpValue = String(tmpValue).replace(/"/g, '""');
       }
 
       tmpRow.push(tmpValue);
