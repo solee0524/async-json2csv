@@ -59,6 +59,10 @@ var csv = await json2csv(options);
 
 ## Change
 
+### v1.0.2
+
+Fix comma stuff.
+
 ### v1.0.1
 
 Add `header` option to decide whether to add fields to header or not.
